@@ -1,7 +1,10 @@
 import React from "react";
-import PanChart from "./PanChart";
+import dynamic from "next/dynamic";
 
 const SalesOverview = () => {
+  const DynamicSparkLine = dynamic(() => import("../cards/PanChart"), {
+    ssr: false,
+  });
   return (
     <div className="flex  items-start flex-wrap justify-between p-4 pt-20">
       <div
@@ -23,7 +26,7 @@ const SalesOverview = () => {
         >
           <h2 className="text-lg font-bold mb-2">24 Aug - 01 Sep 21</h2>
           <div className="my-1  h-[78px] overflow-scroll">
-            <PanChart />
+            <DynamicSparkLine />
           </div>
           <p>This Month</p>
           <p>₦1,652.50</p>

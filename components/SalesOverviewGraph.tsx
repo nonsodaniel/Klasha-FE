@@ -1,9 +1,15 @@
-import PanChart from "@/app/components/cards/PanChart";
+import dynamic from "next/dynamic";
 import React from "react";
 import { FaArrowDown } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
 const SalesOverviewGraph = () => {
+  const DynamicSparkLine = dynamic(
+    () => import("../app/components/cards/PanChart"),
+    {
+      ssr: false,
+    }
+  );
   return (
     <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 shadow-none h-[340px] p-4">
       <div className="rounded-xl col-span-9  h-[284px]">
@@ -27,7 +33,7 @@ const SalesOverviewGraph = () => {
           </div>
         </div>
         <div className="my-1 border-gray-900 border h-[284px] w-[100%] overflow-scroll">
-          <PanChart />
+          <DynamicSparkLine />
         </div>
       </div>
       <div className="flex flex-col justify-between p-5 rounded-xl border bg-[#EF2C5A] text-white col-span-2 shadow-none w-[355px] h-[284px] my-14">
