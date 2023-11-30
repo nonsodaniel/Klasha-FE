@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { links } from "../../utils/constants";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaRegQuestionCircle } from "react-icons/fa";
+import Image from "next/image";
 
 const Sidebar = () => {
   const [toggleCollapse, setToggleCollapse] = useState(false);
@@ -29,7 +30,6 @@ const Sidebar = () => {
   );
 
   const getNavItemClasses = (link) => {
-    console.log(activePath);
     return classNames(
       "flex items-center cursor-pointer rounded w-full overflow-hidden whitespace-nowrap",
       {
@@ -70,13 +70,12 @@ const Sidebar = () => {
       <div className="flex flex-col">
         <div className="flex items-center justify-between relative pt-7">
           <div className="flex items-center pl-1 gap-4">
-            {/* Add your logo or brand icon */}
             <span
               className={classNames("mt-2 text-lg font-medium text-text", {
                 hidden: toggleCollapse,
               })}
             >
-              Klasha
+              <Image src={"/klasha.svg"} alt="Logo" width={90} height={90} />
             </span>
           </div>
           {isCollapsible && (

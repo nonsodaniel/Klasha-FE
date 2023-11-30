@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import { SparklineAreaData } from "../../../utils/constants";
 const DynamicSidebar = dynamic(() => import("../Charts/SpartLine"), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
 });
 const Charts = () => {
   console.log(SparklineAreaData, "hello world");

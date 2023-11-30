@@ -2,7 +2,6 @@ import React, { ReactNode } from "react";
 import dynamic from "next/dynamic";
 const DynamicSidebar = dynamic(() => import("./Sidebar"), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
 });
 
 const Layout = ({ children }: { children: ReactNode }) => {
