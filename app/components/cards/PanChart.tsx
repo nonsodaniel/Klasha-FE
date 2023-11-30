@@ -25,24 +25,11 @@ class PanChart extends Component {
     const options = {
       theme: "light2",
       animationEnabled: true,
-      title: {
-        text: "Units Sold VS Profit",
-      },
-      subtitles: [
-        {
-          text: "Click Legend to Hide or Unhide Data Series",
-        },
-      ],
+
       axisX: {
         title: "States",
       },
-      axisY: {
-        title: "Units Sold",
-        titleFontColor: "#6D78AD",
-        lineColor: "#6D78AD",
-        labelFontColor: "#6D78AD",
-        tickColor: "#6D78AD",
-      },
+
       axisY2: {
         title: "Profit in USD",
         titleFontColor: "#51CDA0",

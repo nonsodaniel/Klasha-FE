@@ -121,14 +121,13 @@ const Sidebar = () => {
         <button className="flex items-center bg-[#EF2C5A] text-white rounded-full px-10 py-4">
           <FaRegQuestionCircle className="mr-2" /> Support
         </button>
-        {isCollapsible && (
-          <button
-            className="flex items-center border-solid border-2 border-black px-7 py-3 rounded-xl"
-            onClick={handleSidebarToggle}
-          >
-            <IoIosArrowBack className="mr-2" /> Close Panel
-          </button>
-        )}
+
+        <button
+          className="flex items-center border-solid border-2 border-black px-7 py-3 rounded-xl"
+          onClick={handleSidebarToggle}
+        >
+          <IoIosArrowBack className="mr-2" /> Close Panel
+        </button>
       </div>
     </div>
   );

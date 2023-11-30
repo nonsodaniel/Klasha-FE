@@ -1,4 +1,5 @@
 import React from "react";
+import PanChart from "./PanChart";
 
 const SalesOverview = () => {
   const items = [
@@ -10,15 +11,29 @@ const SalesOverview = () => {
 
   return (
     <div className="flex  items-start flex-wrap justify-between p-4 pt-20">
-      {items.map((item) => (
+      <div
+        className={`p-4 m-1 col-span-3 sm:col-span-1 md:col-span-1 lg:col-span-1 w-[345px] h-[240px] bg-white text-black  border border-black`}
+      >
+        <h2 className="text-lg font-bold mb-2">Today Sales</h2>
+        <p>₦1,652.50</p>
+      </div>
+      <div
+        className={`p-4 m-1 col-span-3 sm:col-span-1 md:col-span-1 lg:col-span-1 w-[345px] h-[240px] bg-black text-white border border-black`}
+      >
+        <h2 className="text-lg font-bold mb-2">Today Sales</h2>
+        <p>₦1,652.50</p>
+      </div>
+      {[1, 2].map((item) => (
         <div
-          key={item.id}
-          className={`p-4 m-1 col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-1 w-[340px] h-[240px] ${
-            item.id === 2 ? "bg-black text-white" : "bg-white text-black"
-          }`}
+          key={item}
+          className={`flex flex-col justify-between p-4 m-1 col-span-3 sm:col-span-1 md:col-span-1 lg:col-span-1 w-[345px] h-[240px] bg-white text-black border border-black`}
         >
-          <h2 className="text-lg font-bold mb-2">{item.title}</h2>
-          <p>{item.content}</p>
+          <h2 className="text-lg font-bold mb-2">24 Aug - 01 Sep 21</h2>
+          <div className="my-1  h-[78px] overflow-scroll">
+            <PanChart />
+          </div>
+          <p>This Month</p>
+          <p>₦1,652.50</p>
         </div>
       ))}
     </div>
