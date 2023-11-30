@@ -13,6 +13,7 @@
     "@canvasjs/react-charts": "^1.0.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.4",
     "@syncfusion/ej2-react-charts": "^23.2.6",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",

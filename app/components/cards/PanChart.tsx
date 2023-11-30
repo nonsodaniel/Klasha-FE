@@ -1,23 +1,28 @@
 "use client";
+
 import React, { Component } from "react";
 import CanvasJSReact from "@canvasjs/react-charts";
 
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+interface PanChartState {
+  chart: any; // Update with the correct type based on CanvasJSChart
+}
 
-class PanChart extends Component {
-  constructor() {
-    super();
+class PanChart extends Component<{}, PanChartState> {
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      chart: null,
+    };
     this.toggleDataSeries = this.toggleDataSeries.bind(this);
   }
 
-  toggleDataSeries(e) {
+  toggleDataSeries(e: any) {
     if (typeof e.dataSeries.visible === "undefined" || e.dataSeries.visible) {
       e.dataSeries.visible = false;
     } else {
       e.dataSeries.visible = true;
     }
-    this.chart.render();
+    this.state.chart.render();
   }
 
   render() {
@@ -92,7 +97,11 @@ class PanChart extends Component {
 
     return (
       <div className="mt-10">
-        <CanvasJSChart options={options} onRef={(ref) => (this.chart = ref)} />
+        <CanvasJSReact.CanvasJSChart
+          options={options}
+          //@ts-ignore
+          onRef={(ref: any) => (this.state.chart = ref)}
+        />
       </div>
     );
   }

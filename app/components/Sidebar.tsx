@@ -29,7 +29,7 @@ const Sidebar = () => {
     }
   );
 
-  const getNavItemClasses = (link) => {
+  const getNavItemClasses = (link: any) => {
     return classNames(
       "flex items-center cursor-pointer rounded w-full overflow-hidden whitespace-nowrap",
       {
